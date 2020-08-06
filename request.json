@@ -1,0 +1,41 @@
+{
+  "PG_Id_Pipe": "123",
+  "PG_Acao_Comercial": "123",
+  "PG_Status_Ciclo_Venda": "123",
+  "PG_Data_Fechamento": "123",
+  "PG_Nome_CDC": "123",
+  "PG_Nome_EN": "123",
+  "PG_Nome_Ger_Vendas": "123",
+  "PG_Nome_Ger_Atencao": "Joao",
+  "PG_N5_Entrega": "Pedro",
+  "PG_Regional": "123",
+  "PG_Nome_Projeto": "123",
+  "PG_Resumo_Projeto": "123",
+  "PG_CNPJ": "123",
+  "PG_Prazo_de_Contrato": "123",
+  "PG_Responsavel_EA": "Maria",
+  "PG_TAB_Id_Pipe_Produtos": [
+    {
+      "PG_COL_ID_Pipe_Prod": "11111111",
+      "PG_COL_Familia_Produro": "11111111",
+      "PG_COL_Produto_N2": "11111111",
+      "PG_COL_Produto": "11111111",
+      "PG_COL_Qtd_Fisicos_Increm": "11111111",
+      "PG_COL_Rec_Pontual_Inc_NR": "11111111",
+      "PG_COL_Rec_Mensal_Inc_RC": "11111111",
+      "PG_COL_Taxa_Instalacao": "11111111",
+      "PG_COL_Servico": "11111111"
+    },
+    {
+      "PG_COL_ID_Pipe_Prod": "22222222",
+      "PG_COL_Familia_Produro": "22222222",
+      "PG_COL_Produto_N2": "22222222",
+      "PG_COL_Produto": "22222222",
+      "PG_COL_Qtd_Fisicos_Increm": "22222222",
+      "PG_COL_Rec_Pontual_Inc_NR": "22222222",
+      "PG_COL_Rec_Mensal_Inc_RC": "22222222",
+      "PG_COL_Taxa_Instalacao": "22222222",
+      "PG_COL_Servico": "22222222"
+    }
+  ]
+}
