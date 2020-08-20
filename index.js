@@ -3,7 +3,6 @@ const express = require('express')
 const app = express();
 
 app.use(express.json());
-app.use(upload.single("arq_json"));
 
 const error = (message) => ({
   erro: message,
