@@ -1,10 +1,8 @@
 const user_ip = "127.0.0.1";
+const express = require('express')
+const app = express();
 
-const app = require("express")();
-const bodyParser = require("body-parser");
-const upload = require("multer")();
-
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(upload.single("arq_json"));
 
 const error = (message) => ({
@@ -13,31 +11,18 @@ const error = (message) => ({
   user_ip,
 });
 
-const parse = (file) => {
-  try {
-    return JSON.parse(file.buffer.toString());
-  } catch (error) {
-    return { error: error.message };
-  }
-};
-
-app.get("/get_token", (req, res) => {
-  return res.json({
-    response: 200,
-    token: "c0bd6020459b9e06",
-    user_ip,
-  });
-});
-
 app.post("/map3c", (req, res) => {
-  const { token } = req.body;
-  const { file } = req;
+  const { token, ...pipe } = req.body;
+  const { PG_Id_Pipe,PG_TAB_Id_Pipe_Produtos } = req.body;
+  console.log(pipe)
   if (!token)
-    return res.status(400).send(error("token vazio,favor informar token"));
-  if (token.length < 16) return res.status(400).send(error("token inválido"));
-  const data = parse(file);
-  if (data.error)
-    return res.status(400).send(error("Falha ao validar um ou mais campos"));
+    return res.status(400).send(error("Token vazio"));
+  if (token.length < 16) 
+    return res.status(400).send(error("Token inválido"));
+  if (!PG_Id_Pipe)
+    return res.status(400).send(error("Campo PG_Id_Pipe obrigatório não encontrado"));
+  if (!PG_TAB_Id_Pipe_Produtos)
+    return res.status(400).send(error("Campo PG_TAB_Id_Pipe_Produtos obrigatório não encontrado"));
   return res.json({
     response: 200,
     status: "Sucesso",
